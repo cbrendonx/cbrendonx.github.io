@@ -7,3 +7,64 @@ set nocompatible  " not inheriting system wide vim settings
 
 " Show line numbers or not
 set nonu          " displays line numbers to the left uselessly taking up space
+
+" Proper indentation
+set autoindent    " useful when writing code to maintain indenting
+                  "  goes back one indent while still in insert mode
+
+set smartindent   " starts indenting based on language of code 
+
+set cindent       " tells vim to use c-style indenting
+
+" Text on a line
+set nowrap        " lines past terminal screen width stay on the same line
+set wrapmargin=4  " newline inserted 4 characters before screen width
+
+" Search works properly, case-insensitive unless specified
+set ignorecase    " causes searches to be case insensitive
+set smartcase     " case sensitive search when item has an upper case letter
+set incsearch     " starts search as you type the search pattern
+set hlsearch      " future matches aren't highlighted; highlight search results
+
+" Backspace movement
+set backspace=indent,eol,start  " backspace key acts like standard text editor 
+
+" Highlight matching braces, brackets and parenthesis
+set showmatch     " matches { [ and ( as your type
+
+" Use spaces instead of tab and lazy backspacing for indentation
+set softtabstop=4 " 4 is the default spacing for tabs
+set tabstop=8     " 8 is the default spacing for tabs; sets tabs to be 8 characters instead of the default which is 8
+set shiftwidth=4  " 4 is the default spacing for tabs; number of spaces to use for each step of (auto)indent
+set expandtab     " option to expand tab to spaces if desired; tells vim to use spaces instead of tabs
+set shiftround    " maintains indent when tabs and spaces are mixed
+   
+" Error sounds and visuals
+set errorbells    " errors will make noise
+set novisualbell  " screen won't flash moving beyond begin/end and unmatched
+                  " close
+
+" Show the mode
+set showmode      " reports when inserting, otherwise, you are in command mode
+set report=0      " reports changes involving more than 0 lines
+set ruler         " reports line and column number; always show current position
+
+" Show syntax
+syntax on         " colors keywords in language; turns the syntax coloring on
+
+" Favorite colorscheme (:color <space> <tab> shows possible colors)
+:colors default
+
+" Text over 80 characters per line turns red
+match Error /\%81v.\+/
+
+" Tab completion works properly (UNIX Style) and shows menu of possible options.
+set wildmenu
+set wildmode=longest:full
+set wildignore=*.o,*.bak,*.data,*.class
+
+" Scrolling control
+set scrolloff=2   " causes text to scroll 2 characters before file begin or end
+
+" Backups.
+set backup        " prior version of the file is saved prefixed with ~
