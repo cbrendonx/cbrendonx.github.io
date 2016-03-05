@@ -1,0 +1,21 @@
+" From Lab7
+set ic " ignore case in search
+set incsearch " incremental search
+set hlsearch " highlight search results
+set smartcase " ignore case when lowercase
+
+"set lines=30
+"set columns=80
+
+"set number "line numbers on
+syntax on "colored syntax
+set ai "auto indent
+set si "smart indenting, adds a level of indent when needed
+" expand tabs
+set tabstop=2     " makes tabs only 2 columns (spaces) wide
+set shiftwidth=2  " basically same as above
+set expandtab     " expands tabs to appropriate amount of spaces
+
+" change tabstop width for python files
+autocmd BufRead,BufNewFile *.py set tabstop=4
+autocmd BufRead,BufNewFile *.py set shiftwidth=4
